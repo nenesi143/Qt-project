@@ -47,17 +47,14 @@ void MainWindow::on_addLabwork_clicked()
         return;
     }
 
-    // Создаем диалоговое окно с полями ввода
     QDialog dialog(this);
     QFormLayout form(&dialog);
 
-    // Поля ввода
     QLineEdit *studentEdit = new QLineEdit(&dialog);
     QLineEdit *groupnumEdit = new QLineEdit(&dialog);
     QLineEdit *namecourseEdit = new QLineEdit(&dialog);
     QLineEdit *namelabworkEdit = new QLineEdit(&dialog);
 
-    // Виджеты для выбора даты
     QDateEdit *deadlineEdit = new QDateEdit(QDate::currentDate(), &dialog);
     deadlineEdit->setCalendarPopup(true);
     deadlineEdit->setDisplayFormat("dd.MM.yyyy");
@@ -70,7 +67,6 @@ void MainWindow::on_addLabwork_clicked()
     gradeEdit->setRange(2, 5);
     gradeEdit->setValue(3);
 
-    // Добавляем поля в форму
     form.addRow("Студент:", studentEdit);
     form.addRow("Номер группы:", groupnumEdit);
     form.addRow("Название курса:", namecourseEdit);
@@ -79,7 +75,6 @@ void MainWindow::on_addLabwork_clicked()
     form.addRow("Дата выдачи:", issueDateEdit);
     form.addRow("Оценка:", gradeEdit);
 
-    // Кнопки OK и Cancel
     QDialogButtonBox buttonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel,
                                Qt::Horizontal, &dialog);
     form.addRow(&buttonBox);
@@ -87,18 +82,15 @@ void MainWindow::on_addLabwork_clicked()
     QObject::connect(&buttonBox, &QDialogButtonBox::accepted, &dialog, &QDialog::accept);
     QObject::connect(&buttonBox, &QDialogButtonBox::rejected, &dialog, &QDialog::reject);
 
-    // Показываем диалог
     if (dialog.exec() != QDialog::Accepted)
         return;
 
-    // Проверяем заполнение обязательных полей
     if (studentEdit->text().isEmpty() || groupnumEdit->text().isEmpty() ||
         namecourseEdit->text().isEmpty() || namelabworkEdit->text().isEmpty()) {
         QMessageBox::warning(this, "Ошибка", "Заполните все обязательные поля!");
         return;
     }
 
-    // Добавляем запись в таблицу
     int row = ui->tableWidget->rowCount();
     ui->tableWidget->insertRow(row);
 
@@ -152,6 +144,7 @@ void MainWindow::on_ImportButton_clicked(){
                 ui->tableWidget->setItem(row, 4, new QTableWidgetItem(record[4]));
                 ui->tableWidget->setItem(row, 5, new QTableWidgetItem(record[5]));
 
+                recordcount++;
                 record.clear();
             }
         }
@@ -166,6 +159,10 @@ void MainWindow::on_ImportButton_clicked(){
 
 void MainWindow::on_DeleteRecord_clicked()
 {
+    if (recordcount == 0){
+        QMessageBox::warning(this, "Ошибка", "Нет записей для удаления!");
+        return;
+    }
     int index = QInputDialog::getInt(this, "Удаление записи", "Индекс");
 
     if (index < 1 or index > ui->tableWidget->rowCount()){
@@ -222,6 +219,11 @@ void MainWindow::on_ExportButton_clicked()
 
 void MainWindow::on_DeleteRecord_2_clicked()
 {
+    if (recordcount == 0){
+        QMessageBox::warning(this, "Ошибка", "Нет записей для удаления!");
+        return;
+    }
+
     QString FNS = QInputDialog::getText(this, "Добавление записи", "Студент:", QLineEdit::Normal, "").trimmed();
 
     if (FNS.isEmpty()){
@@ -259,6 +261,11 @@ void MainWindow::on_DeleteRecord_2_clicked()
 
 void MainWindow::on_EditRecord_clicked()
 {
+    if (recordcount == 0){
+        QMessageBox::warning(this, "Ошибка", "Нет записей для изменения оценки!");
+        return;
+    }
+
     int index = QInputDialog::getInt(this, "Изменение записи", QString("Введите индекс").arg(recordcount), 1, 1, recordcount, 1);
     int newGrade = QInputDialog::getInt(this, "Изменение оценки", "Оценка", 1, 2, 5, 1);
 
@@ -310,6 +317,11 @@ void MainWindow::on_newColumn_clicked()
 
 void MainWindow::on_Request1_clicked()
 {
+    if (recordcount == 0){
+        QMessageBox::warning(this, "Ошибка", "Нет записей осуществление запроса!");
+        return;
+    }
+
     int countRecords = 0;
     QString student = QInputDialog::getText(this, "Сколько студент сдал лабораторных работ", "Введите студента", QLineEdit::Normal);
 
@@ -330,6 +342,11 @@ void MainWindow::on_Request1_clicked()
 
 void MainWindow::on_Request2_clicked()
 {
+    if (recordcount == 0){
+        QMessageBox::warning(this, "Ошибка", "Нет записей осуществление запроса!");
+        return;
+    }
+
     int countRecords = 0;
     QString groupname = QInputDialog::getText(this, "Название группы", "Введите название группы", QLineEdit::Normal);
 
@@ -366,6 +383,11 @@ void MainWindow::on_Request2_clicked()
 
 void MainWindow::on_Request3_clicked()
 {
+    if (recordcount == 0){
+        QMessageBox::warning(this, "Ошибка", "Нет записей осуществление запроса!");
+        return;
+    }
+
     struct student{
         QString studentName;
         QString nameCourse;
@@ -422,6 +444,11 @@ void MainWindow::on_Request3_clicked()
 
 void MainWindow::on_Request4_clicked()
 {
+    if (recordcount == 0){
+        QMessageBox::warning(this, "Ошибка", "Нет записей осуществление запроса!");
+        return;
+    }
+
     QString nameCourse = QInputDialog::getText(this, "Поиск студентов", "Введите название курса", QLineEdit::Normal);
 
     if (nameCourse.isEmpty()){
@@ -441,7 +468,7 @@ void MainWindow::on_Request4_clicked()
             bool rep;
             int grade = grades->text().toInt(&rep);
 
-            if (rep and (grade == 4 or grade == 5)){
+            if (rep and (grade == 4 or grade == 5) and course->text() == nameCourse){
                 QTableWidgetItem* name = ui->tableWidget->item(row, 0);
                 QTableWidgetItem* group = ui->tableWidget->item(row, 1);
                 QTableWidgetItem* lab = ui->tableWidget->item(row, 3);
@@ -459,11 +486,15 @@ void MainWindow::on_Request4_clicked()
     else{
         QMessageBox::information(this, "Результат", report.join("\n"));
     }
-
 }
 
 void MainWindow::on_Request5_clicked()
 {
+    if (recordcount == 0){
+        QMessageBox::warning(this, "Ошибка", "Нет записей осуществление запроса!");
+        return;
+    }
+
     QDate currentDate = QDate::currentDate();
     QDate twoMountAgo = currentDate.addMonths(-2);
 
@@ -479,7 +510,12 @@ void MainWindow::on_Request5_clicked()
         QTableWidgetItem* nameCourse = ui->tableWidget->item(row, 2);
         QTableWidgetItem* labWork = ui->tableWidget->item(row, 3);
 
-        if (!issueDateItem or !name or !group or !nameCourse or !labWork){
+        if (!issueDateItem){
+            QMessageBox::information(this, "Внимание", "В таблице пропущен столбец даты выдачи");
+            return;
+        }
+
+        if (!name or !group or !nameCourse or !labWork){
             QMessageBox::information(this, "Внимание", "Строка пропущена, в ней не хватает данных");
             continue;
         }
@@ -507,6 +543,11 @@ void MainWindow::on_Request5_clicked()
 
 void MainWindow::on_Request2_2_clicked()
 {
+    if (recordcount == 0){
+        QMessageBox::warning(this, "Ошибка", "Нет записей осуществление запроса!");
+        return;
+    }
+
     QString nameStudent;
     QString nameLabwork;
     int maxDays = 0;
@@ -548,6 +589,11 @@ void MainWindow::on_Request2_2_clicked()
 
 void MainWindow::on_Diagram1_clicked()
 {
+    if (recordcount == 0){
+        QMessageBox::warning(this, "Ошибка", "Нет записей построения диаграммы!");
+        return;
+    }
+
     if (chartView->isVisible()) {
             chartView->setVisible(false);
             ui->tableWidget->setVisible(true);
@@ -600,6 +646,11 @@ void MainWindow::on_Diagram1_clicked()
 
 void MainWindow::on_Diagram2_clicked()
 {
+    if (recordcount == 0){
+        QMessageBox::warning(this, "Ошибка", "Нет записей построения диаграммы!");
+        return;
+    }
+
     if (chartView->isVisible()) {
         chartView->setVisible(false);
         ui->tableWidget->setVisible(true);
@@ -640,82 +691,91 @@ void MainWindow::on_Diagram2_clicked()
 
 void MainWindow::on_graphic_clicked()
 {
-        if (chartView->isVisible()) {
-            chartView->setVisible(false);
-            ui->tableWidget->setVisible(true);
-            return;
-        }
+    if (recordcount == 0){
+        QMessageBox::warning(this, "Ошибка", "Нет записей построения диаграммы!");
+        return;
+    }
+    if (chartView->isVisible()) {
+        chartView->setVisible(false);
+        ui->tableWidget->setVisible(true);
+        return;
+    }
 
-        QMap<QString, int> groupDebtCounts;
-        QDate currentDate = QDate::currentDate();
-        QDate monthAgo = currentDate.addMonths(-1);
+    QMap<QString, int> groupDebtCounts;
+    QDate currentDate = QDate::currentDate();
+    QDate monthAgo = currentDate.addMonths(-1);
 
-        for (int row = 0; row < ui->tableWidget->rowCount(); ++row) {
-            QTableWidgetItem* groupItem = ui->tableWidget->item(row, 1);
-            QTableWidgetItem* dateItem = ui->tableWidget->item(row, 4);
+    for (int row = 0; row < ui->tableWidget->rowCount(); ++row) {
+        QTableWidgetItem* groupItem = ui->tableWidget->item(row, 1);
+        QTableWidgetItem* dateItem = ui->tableWidget->item(row, 4);
 
-            if (groupItem && dateItem && !groupItem->text().isEmpty()) {
-                QDate submissionDate = QDate::fromString(dateItem->text(), "dd.MM.yyyy");
-                if (!submissionDate.isValid() || submissionDate < monthAgo) {
-                    groupDebtCounts[groupItem->text()]++;
-                }
+        if (groupItem && dateItem && !groupItem->text().isEmpty()) {
+            QDate submissionDate = QDate::fromString(dateItem->text(), "dd.MM.yyyy");
+            if (!submissionDate.isValid() || submissionDate < monthAgo) {
+                groupDebtCounts[groupItem->text()]++;
             }
         }
+    }
 
-        if (groupDebtCounts.isEmpty()) {
-            QMessageBox::information(this, "Информация", "Нет студентов с задолженностью более месяца!");
-            return;
-        }
+    if (groupDebtCounts.isEmpty()) {
+        QMessageBox::information(this, "Информация", "Нет студентов с задолженностью более месяца!");
+        return;
+    }
 
-        QBarSeries *series = new QBarSeries();
-        QBarSet *barSet = new QBarSet("Задолженности");
-        series->append(barSet);
+    QBarSeries *series = new QBarSeries();
+    QBarSet *barSet = new QBarSet("Задолженности");
+    series->append(barSet);
 
-        QStringList groups = groupDebtCounts.keys();
-        groups.sort();
+    QStringList groups = groupDebtCounts.keys();
+    groups.sort();
 
-        foreach (const QString &group, groups) {
-            *barSet << groupDebtCounts[group];
-        }
+    foreach (const QString &group, groups) {
+        *barSet << groupDebtCounts[group];
+    }
 
-        QBarCategoryAxis *axisX = new QBarCategoryAxis();
-        axisX->append(groups);
-        axisX->setTitleText("Группы");
+    QBarCategoryAxis *axisX = new QBarCategoryAxis();
+    axisX->append(groups);
+    axisX->setTitleText("Группы");
 
-        QValueAxis *axisY = new QValueAxis();
-        axisY->setTitleText("Количество студентов");
-        axisY->setMin(0);
-        axisY->setMax(10);
+    QValueAxis *axisY = new QValueAxis();
+    axisY->setTitleText("Количество студентов");
+    axisY->setMin(0);
+    axisY->setMax(10);
 
-        int maxDebt = 0;
-        foreach (int count, groupDebtCounts.values()) {
-            if (count > maxDebt) maxDebt = count;
-        }
-        axisY->setMax(maxDebt + 1);
+    int maxDebt = 0;
+    foreach (int count, groupDebtCounts.values()) {
+        if (count > maxDebt) maxDebt = count;
+    }
+    axisY->setMax(maxDebt + 1);
 
-        QChart *chart = new QChart();
-        chart->addSeries(series);
-        chart->addAxis(axisX, Qt::AlignBottom);
-        chart->addAxis(axisY, Qt::AlignLeft);
-        series->attachAxis(axisX);
-        series->attachAxis(axisY);
+    QChart *chart = new QChart();
+    chart->addSeries(series);
+    chart->addAxis(axisX, Qt::AlignBottom);
+    chart->addAxis(axisY, Qt::AlignLeft);
+    series->attachAxis(axisX);
+    series->attachAxis(axisY);
 
-        chart->setTitle("Задолженности по группам (более 1 месяца)");
-        chart->legend()->setVisible(true);
+    chart->setTitle("Задолженности по группам (более 1 месяца)");
+    chart->legend()->setVisible(true);
 
-        if (!chartView) {
-            chartView = new QChartView(this);
-            ui->verticalLayout_2->addWidget(chartView);
-        }
-        chartView->setChart(chart);
-        chartView->setVisible(true);
-        ui->tableWidget->setVisible(false);
+    if (!chartView) {
+        chartView = new QChartView(this);
+        ui->verticalLayout_2->addWidget(chartView);
+    }
+    chartView->setChart(chart);
+    chartView->setVisible(true);
+    ui->tableWidget->setVisible(false);
 }
 
 
 
 void MainWindow::on_Diagram3_clicked()
 {
+    if (recordcount == 0){
+        QMessageBox::warning(this, "Ошибка", "Нет записей построения диаграммы!");
+        return;
+    }
+
     if (chartView->isVisible()) {
         chartView->setVisible(false);
         ui->tableWidget->setVisible(true);

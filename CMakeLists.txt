@@ -27,7 +27,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         ${PROJECT_SOURCES}
     )
 else()
-    add_executable(test1 WIN32 ${PROJECT_SOURCES})  # WIN32 для GUI-приложения
+    add_executable(test1 WIN32 ${PROJECT_SOURCES})
 endif()
 
 target_link_libraries(test1 PRIVATE
