@@ -1,0 +1,8 @@
+C:/Users/motya/Desktop/build-123-Desktop_Qt_5_12_12_MinGW_64_bit-MinSizeRel/CMakeFiles/test1.dir
+C:/Users/motya/Desktop/build-123-Desktop_Qt_5_12_12_MinGW_64_bit-MinSizeRel/CMakeFiles/edit_cache.dir
+C:/Users/motya/Desktop/build-123-Desktop_Qt_5_12_12_MinGW_64_bit-MinSizeRel/CMakeFiles/rebuild_cache.dir
+C:/Users/motya/Desktop/build-123-Desktop_Qt_5_12_12_MinGW_64_bit-MinSizeRel/CMakeFiles/list_install_components.dir
+C:/Users/motya/Desktop/build-123-Desktop_Qt_5_12_12_MinGW_64_bit-MinSizeRel/CMakeFiles/install.dir
+C:/Users/motya/Desktop/build-123-Desktop_Qt_5_12_12_MinGW_64_bit-MinSizeRel/CMakeFiles/install/local.dir
+C:/Users/motya/Desktop/build-123-Desktop_Qt_5_12_12_MinGW_64_bit-MinSizeRel/CMakeFiles/install/strip.dir
+C:/Users/motya/Desktop/build-123-Desktop_Qt_5_12_12_MinGW_64_bit-MinSizeRel/CMakeFiles/test1_autogen.dir
