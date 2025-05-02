@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
+    <width>1022</width>
     <height>582</height>
    </rect>
   </property>
@@ -14,77 +14,21 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QPushButton" name="addLabwork">
-    <property name="geometry">
-     <rect>
-      <x>340</x>
-      <y>40</y>
-      <width>101</width>
-      <height>33</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Bahnschrift SemiBold SemiConden</family>
-      <weight>75</weight>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="autoFillBackground">
-     <bool>false</bool>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">border-radius: 10px;
-color: rgb(0, 0, 0);
-background-color: rgb(255, 255, 255);
-padding: 6px;</string>
-    </property>
-    <property name="text">
-     <string>Добавить запись</string>
-    </property>
-   </widget>
    <widget class="QTableWidget" name="tableWidget">
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>80</y>
-      <width>801</width>
+      <y>90</y>
+      <width>781</width>
       <height>351</height>
      </rect>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="DeleteRecord">
-    <property name="geometry">
-     <rect>
-      <x>560</x>
-      <y>40</y>
-      <width>101</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Bahnschrift SemiBold SemiConden</family>
-      <pointsize>8</pointsize>
-      <weight>75</weight>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">border-radius: 10px;
-color: rgb(0, 0, 0);
-background-color: rgb(255, 255, 255);
-padding: 6px;</string>
-    </property>
-    <property name="text">
-     <string>Удалить запись</string>
     </property>
    </widget>
    <widget class="QPushButton" name="ImportButton">
     <property name="geometry">
      <rect>
       <x>30</x>
-      <y>40</y>
+      <y>50</y>
       <width>111</width>
       <height>31</height>
      </rect>
@@ -106,13 +50,13 @@ padding: 6px;</string>
      <string>Импорт</string>
     </property>
    </widget>
-   <widget class="QFrame" name="frame">
+   <widget class="QFrame" name="frame_2">
     <property name="geometry">
      <rect>
-      <x>-1</x>
-      <y>-1</y>
-      <width>801</width>
-      <height>101</height>
+      <x>0</x>
+      <y>0</y>
+      <width>1031</width>
+      <height>561</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -124,38 +68,12 @@ padding: 6px;</string>
     <property name="frameShadow">
      <enum>QFrame::Raised</enum>
     </property>
-    <widget class="QPushButton" name="ExportButton">
+    <widget class="QPushButton" name="newColumn">
      <property name="geometry">
       <rect>
-       <x>150</x>
-       <y>40</y>
-       <width>111</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Bahnschrift SemiBold SemiConden</family>
-       <weight>75</weight>
-       <bold>true</bold>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">border-radius: 10px;
-color: rgb(0, 0, 0);
-background-color: rgb(255, 255, 255);
-padding: 6px;</string>
-     </property>
-     <property name="text">
-      <string>Экспорт</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="DeleteRecord_2">
-     <property name="geometry">
-      <rect>
-       <x>450</x>
-       <y>40</y>
-       <width>101</width>
+       <x>790</x>
+       <y>400</y>
+       <width>221</width>
        <height>31</height>
       </rect>
      </property>
@@ -174,15 +92,312 @@ background-color: rgb(255, 255, 255);
 padding: 6px;</string>
      </property>
      <property name="text">
-      <string>Удалить по ФИО</string>
+      <string>Добавить столбец &quot;Дата выдачи&quot;</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="Request1">
+     <property name="geometry">
+      <rect>
+       <x>790</x>
+       <y>100</y>
+       <width>221</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Bahnschrift SemiBold SemiConden</family>
+       <pointsize>8</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border-radius: 10px;
+color: rgb(0, 0, 0);
+background-color: rgb(255, 255, 255);
+padding: 6px;</string>
+     </property>
+     <property name="text">
+      <string>Сколько работ сдал студент</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="Request3">
+     <property name="geometry">
+      <rect>
+       <x>790</x>
+       <y>180</y>
+       <width>221</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Bahnschrift SemiBold SemiConden</family>
+       <pointsize>8</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border-radius: 10px;
+color: rgb(0, 0, 0);
+background-color: rgb(255, 255, 255);
+padding: 6px;</string>
+     </property>
+     <property name="text">
+      <string>Студенты, сдавшие больше двух работ за день</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="Request2">
+     <property name="geometry">
+      <rect>
+       <x>790</x>
+       <y>140</y>
+       <width>221</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Bahnschrift SemiBold SemiConden</family>
+       <pointsize>8</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border-radius: 10px;
+color: rgb(0, 0, 0);
+background-color: rgb(255, 255, 255);
+padding: 6px;</string>
+     </property>
+     <property name="text">
+      <string>Сколько работ сдала группа</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="Request4">
+     <property name="geometry">
+      <rect>
+       <x>790</x>
+       <y>220</y>
+       <width>221</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Bahnschrift SemiBold SemiConden</family>
+       <pointsize>8</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border-radius: 10px;
+color: rgb(0, 0, 0);
+background-color: rgb(255, 255, 255);
+padding: 6px;</string>
+     </property>
+     <property name="text">
+      <string>Студенты, сдавшие на 4 и 5</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="Request5">
+     <property name="geometry">
+      <rect>
+       <x>790</x>
+       <y>260</y>
+       <width>221</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Bahnschrift SemiBold SemiConden</family>
+       <pointsize>8</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border-radius: 10px;
+color: rgb(0, 0, 0);
+background-color: rgb(255, 255, 255);
+padding: 6px;</string>
+     </property>
+     <property name="text">
+      <string>Студенты, не сдавшие работы за 2 месяца </string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="Request2_2">
+     <property name="geometry">
+      <rect>
+       <x>790</x>
+       <y>300</y>
+       <width>221</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Bahnschrift SemiBold SemiConden</family>
+       <pointsize>8</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border-radius: 10px;
+color: rgb(0, 0, 0);
+background-color: rgb(255, 255, 255);
+padding: 6px;</string>
+     </property>
+     <property name="text">
+      <string>Самая долгая сдача работы</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="Diagram1">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>460</y>
+       <width>201</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Bahnschrift SemiBold SemiConden</family>
+       <pointsize>8</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border-radius: 10px;
+color: rgb(0, 0, 0);
+background-color: rgb(255, 255, 255);
+padding: 6px;</string>
+     </property>
+     <property name="text">
+      <string>Часть от всех работ, сданная курсом</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="Diagram2">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>500</y>
+       <width>201</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Bahnschrift SemiBold SemiConden</family>
+       <pointsize>8</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border-radius: 10px;
+color: rgb(0, 0, 0);
+background-color: rgb(255, 255, 255);
+padding: 6px;</string>
+     </property>
+     <property name="text">
+      <string>Количество всех сданных работ</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="graphic">
+     <property name="geometry">
+      <rect>
+       <x>230</x>
+       <y>460</y>
+       <width>201</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Bahnschrift SemiBold SemiConden</family>
+       <pointsize>8</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border-radius: 10px;
+color: rgb(0, 0, 0);
+background-color: rgb(255, 255, 255);
+padding: 6px;</string>
+     </property>
+     <property name="text">
+      <string>Задолжности больше одного месяца</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="Diagram3">
+     <property name="geometry">
+      <rect>
+       <x>230</x>
+       <y>500</y>
+       <width>201</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Bahnschrift SemiBold SemiConden</family>
+       <pointsize>8</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border-radius: 10px;
+color: rgb(0, 0, 0);
+background-color: rgb(255, 255, 255);
+padding: 6px;</string>
+     </property>
+     <property name="text">
+      <string>Записи, с полученной оценкой</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="DeleteRecord_2">
+     <property name="geometry">
+      <rect>
+       <x>620</x>
+       <y>10</y>
+       <width>161</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Bahnschrift SemiBold SemiConden</family>
+       <pointsize>8</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border-radius: 10px;
+color: rgb(0, 0, 0);
+background-color: rgb(255, 255, 255);
+padding: 6px;</string>
+     </property>
+     <property name="text">
+      <string>Удалить все записи студента</string>
      </property>
     </widget>
     <widget class="QPushButton" name="EditRecord">
      <property name="geometry">
       <rect>
-       <x>670</x>
-       <y>40</y>
-       <width>101</width>
+       <x>440</x>
+       <y>10</y>
+       <width>141</width>
        <height>31</height>
       </rect>
      </property>
@@ -204,38 +419,18 @@ padding: 6px;</string>
       <string>Изменить оценку</string>
      </property>
     </widget>
-   </widget>
-   <widget class="QFrame" name="frame_2">
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>430</y>
-      <width>801</width>
-      <height>131</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(170, 255, 255);</string>
-    </property>
-    <property name="frameShape">
-     <enum>QFrame::StyledPanel</enum>
-    </property>
-    <property name="frameShadow">
-     <enum>QFrame::Raised</enum>
-    </property>
-    <widget class="QPushButton" name="newColumn">
+    <widget class="QPushButton" name="ExportButton">
      <property name="geometry">
       <rect>
-       <x>690</x>
+       <x>30</x>
        <y>10</y>
-       <width>101</width>
+       <width>111</width>
        <height>31</height>
       </rect>
      </property>
      <property name="font">
       <font>
        <family>Bahnschrift SemiBold SemiConden</family>
-       <pointsize>8</pointsize>
        <weight>75</weight>
        <bold>true</bold>
       </font>
@@ -247,42 +442,15 @@ background-color: rgb(255, 255, 255);
 padding: 6px;</string>
      </property>
      <property name="text">
-      <string>Добавить столбец</string>
+      <string>Экспорт</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="Request1">
+    <widget class="QPushButton" name="DeleteRecord">
      <property name="geometry">
       <rect>
-       <x>10</x>
-       <y>10</y>
-       <width>101</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Bahnschrift SemiBold SemiConden</family>
-       <pointsize>8</pointsize>
-       <weight>75</weight>
-       <bold>true</bold>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">border-radius: 10px;
-color: rgb(0, 0, 0);
-background-color: rgb(255, 255, 255);
-padding: 6px;</string>
-     </property>
-     <property name="text">
-      <string>Запрос 1</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="Request3">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
+       <x>620</x>
        <y>50</y>
-       <width>101</width>
+       <width>161</width>
        <height>31</height>
       </rect>
      </property>
@@ -301,52 +469,27 @@ background-color: rgb(255, 255, 255);
 padding: 6px;</string>
      </property>
      <property name="text">
-      <string>Запрос 3</string>
+      <string>Удалить запись</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="Request2">
+    <widget class="QPushButton" name="addLabwork">
      <property name="geometry">
       <rect>
-       <x>120</x>
-       <y>10</y>
-       <width>101</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Bahnschrift SemiBold SemiConden</family>
-       <pointsize>8</pointsize>
-       <weight>75</weight>
-       <bold>true</bold>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">border-radius: 10px;
-color: rgb(0, 0, 0);
-background-color: rgb(255, 255, 255);
-padding: 6px;</string>
-     </property>
-     <property name="text">
-      <string>Запрос 2</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="Request4">
-     <property name="geometry">
-      <rect>
-       <x>120</x>
+       <x>440</x>
        <y>50</y>
-       <width>101</width>
-       <height>31</height>
+       <width>141</width>
+       <height>33</height>
       </rect>
      </property>
      <property name="font">
       <font>
        <family>Bahnschrift SemiBold SemiConden</family>
-       <pointsize>8</pointsize>
        <weight>75</weight>
        <bold>true</bold>
       </font>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
      </property>
      <property name="styleSheet">
       <string notr="true">border-radius: 10px;
@@ -355,169 +498,7 @@ background-color: rgb(255, 255, 255);
 padding: 6px;</string>
      </property>
      <property name="text">
-      <string>Запрос 4</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="Request5">
-     <property name="geometry">
-      <rect>
-       <x>260</x>
-       <y>10</y>
-       <width>101</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Bahnschrift SemiBold SemiConden</family>
-       <pointsize>8</pointsize>
-       <weight>75</weight>
-       <bold>true</bold>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">border-radius: 10px;
-color: rgb(0, 0, 0);
-background-color: rgb(255, 255, 255);
-padding: 6px;</string>
-     </property>
-     <property name="text">
-      <string>Запрос 1</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="Request2_2">
-     <property name="geometry">
-      <rect>
-       <x>260</x>
-       <y>50</y>
-       <width>101</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Bahnschrift SemiBold SemiConden</family>
-       <pointsize>8</pointsize>
-       <weight>75</weight>
-       <bold>true</bold>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">border-radius: 10px;
-color: rgb(0, 0, 0);
-background-color: rgb(255, 255, 255);
-padding: 6px;</string>
-     </property>
-     <property name="text">
-      <string>Запрос 2</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="Diagram1">
-     <property name="geometry">
-      <rect>
-       <x>410</x>
-       <y>10</y>
-       <width>101</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Bahnschrift SemiBold SemiConden</family>
-       <pointsize>8</pointsize>
-       <weight>75</weight>
-       <bold>true</bold>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">border-radius: 10px;
-color: rgb(0, 0, 0);
-background-color: rgb(255, 255, 255);
-padding: 6px;</string>
-     </property>
-     <property name="text">
-      <string>Диаграмма 1</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="Diagram2">
-     <property name="geometry">
-      <rect>
-       <x>410</x>
-       <y>50</y>
-       <width>101</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Bahnschrift SemiBold SemiConden</family>
-       <pointsize>8</pointsize>
-       <weight>75</weight>
-       <bold>true</bold>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">border-radius: 10px;
-color: rgb(0, 0, 0);
-background-color: rgb(255, 255, 255);
-padding: 6px;</string>
-     </property>
-     <property name="text">
-      <string>Диаграмма 2</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="graphic">
-     <property name="geometry">
-      <rect>
-       <x>520</x>
-       <y>10</y>
-       <width>101</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Bahnschrift SemiBold SemiConden</family>
-       <pointsize>8</pointsize>
-       <weight>75</weight>
-       <bold>true</bold>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">border-radius: 10px;
-color: rgb(0, 0, 0);
-background-color: rgb(255, 255, 255);
-padding: 6px;</string>
-     </property>
-     <property name="text">
-      <string>График 1</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="Diagram3">
-     <property name="geometry">
-      <rect>
-       <x>520</x>
-       <y>50</y>
-       <width>101</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Bahnschrift SemiBold SemiConden</family>
-       <pointsize>8</pointsize>
-       <weight>75</weight>
-       <bold>true</bold>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">border-radius: 10px;
-color: rgb(0, 0, 0);
-background-color: rgb(255, 255, 255);
-padding: 6px;</string>
-     </property>
-     <property name="text">
-      <string>График 2</string>
+      <string>Добавить новую запись</string>
      </property>
     </widget>
    </widget>
@@ -525,18 +506,15 @@ padding: 6px;</string>
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>80</y>
-      <width>781</width>
-      <height>321</height>
+      <y>90</y>
+      <width>761</width>
+      <height>331</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout_2"/>
    </widget>
    <zorder>frame_2</zorder>
-   <zorder>frame</zorder>
-   <zorder>addLabwork</zorder>
    <zorder>tableWidget</zorder>
-   <zorder>DeleteRecord</zorder>
    <zorder>ImportButton</zorder>
    <zorder>verticalLayoutWidget</zorder>
   </widget>
@@ -545,7 +523,7 @@ padding: 6px;</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
+     <width>1022</width>
      <height>20</height>
     </rect>
    </property>
