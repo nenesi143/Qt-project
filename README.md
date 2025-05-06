@@ -13,7 +13,7 @@ Qt-приложение для учета сдачи лабораторных р
   ## Для Windows
   - X64
   ```
-  1) Открыть LabWorkManager.exe, скачать его можно [Тык](https://github.com/nenesi143/LabWorkManager.git)
+  1) Открыть LabWorkManager.exe, скачать его можно [Тык] (https://github.com/nenesi143/LabWorkManager.git)
   2) Установить и запустить
   ```
 
