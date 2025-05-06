@@ -9,11 +9,12 @@ Qt-приложение для учета сдачи лабораторных р
 - Формирование различных отчетов по успеваемости
 - Импорт/экспорт данных в текстовые файлы
 
+Скачать приложение [Тык](https://github.com/nenesi143/LabWorkManager.git))
 # Как установить?
   ## Для Windows
   - X64
   ```
-  1) Открыть LabWorkManager.exe, скачать его можно [Тык] (https://github.com/nenesi143/LabWorkManager.git)
+  1) Открыть LabWorkManager.exe
   2) Установить и запустить
   ```
 
