@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1022</width>
+    <width>1120</width>
     <height>582</height>
    </rect>
   </property>
@@ -55,7 +55,7 @@ padding: 6px;</string>
      <rect>
       <x>0</x>
       <y>0</y>
-      <width>1031</width>
+      <width>1121</width>
       <height>561</height>
      </rect>
     </property>
@@ -73,7 +73,7 @@ padding: 6px;</string>
       <rect>
        <x>790</x>
        <y>400</y>
-       <width>221</width>
+       <width>291</width>
        <height>31</height>
       </rect>
      </property>
@@ -100,7 +100,7 @@ padding: 6px;</string>
       <rect>
        <x>790</x>
        <y>100</y>
-       <width>221</width>
+       <width>291</width>
        <height>31</height>
       </rect>
      </property>
@@ -127,7 +127,7 @@ padding: 6px;</string>
       <rect>
        <x>790</x>
        <y>180</y>
-       <width>221</width>
+       <width>291</width>
        <height>31</height>
       </rect>
      </property>
@@ -154,7 +154,7 @@ padding: 6px;</string>
       <rect>
        <x>790</x>
        <y>140</y>
-       <width>221</width>
+       <width>291</width>
        <height>31</height>
       </rect>
      </property>
@@ -181,7 +181,7 @@ padding: 6px;</string>
       <rect>
        <x>790</x>
        <y>220</y>
-       <width>221</width>
+       <width>291</width>
        <height>31</height>
       </rect>
      </property>
@@ -208,7 +208,7 @@ padding: 6px;</string>
       <rect>
        <x>790</x>
        <y>260</y>
-       <width>221</width>
+       <width>291</width>
        <height>31</height>
       </rect>
      </property>
@@ -235,7 +235,7 @@ padding: 6px;</string>
       <rect>
        <x>790</x>
        <y>300</y>
-       <width>221</width>
+       <width>291</width>
        <height>31</height>
       </rect>
      </property>
@@ -261,8 +261,8 @@ padding: 6px;</string>
      <property name="geometry">
       <rect>
        <x>20</x>
-       <y>460</y>
-       <width>201</width>
+       <y>450</y>
+       <width>241</width>
        <height>31</height>
       </rect>
      </property>
@@ -288,8 +288,8 @@ padding: 6px;</string>
      <property name="geometry">
       <rect>
        <x>20</x>
-       <y>500</y>
-       <width>201</width>
+       <y>490</y>
+       <width>241</width>
        <height>31</height>
       </rect>
      </property>
@@ -314,9 +314,9 @@ padding: 6px;</string>
     <widget class="QPushButton" name="graphic">
      <property name="geometry">
       <rect>
-       <x>230</x>
-       <y>460</y>
-       <width>201</width>
+       <x>270</x>
+       <y>450</y>
+       <width>241</width>
        <height>31</height>
       </rect>
      </property>
@@ -341,9 +341,9 @@ padding: 6px;</string>
     <widget class="QPushButton" name="Diagram3">
      <property name="geometry">
       <rect>
-       <x>230</x>
-       <y>500</y>
-       <width>201</width>
+       <x>270</x>
+       <y>490</y>
+       <width>241</width>
        <height>31</height>
       </rect>
      </property>
@@ -368,9 +368,9 @@ padding: 6px;</string>
     <widget class="QPushButton" name="DeleteRecord_2">
      <property name="geometry">
       <rect>
-       <x>620</x>
+       <x>590</x>
        <y>10</y>
-       <width>161</width>
+       <width>191</width>
        <height>31</height>
       </rect>
      </property>
@@ -395,9 +395,9 @@ padding: 6px;</string>
     <widget class="QPushButton" name="EditRecord">
      <property name="geometry">
       <rect>
-       <x>440</x>
+       <x>410</x>
        <y>10</y>
-       <width>141</width>
+       <width>171</width>
        <height>31</height>
       </rect>
      </property>
@@ -448,9 +448,9 @@ padding: 6px;</string>
     <widget class="QPushButton" name="DeleteRecord">
      <property name="geometry">
       <rect>
-       <x>620</x>
+       <x>590</x>
        <y>50</y>
-       <width>161</width>
+       <width>191</width>
        <height>31</height>
       </rect>
      </property>
@@ -475,9 +475,9 @@ padding: 6px;</string>
     <widget class="QPushButton" name="addLabwork">
      <property name="geometry">
       <rect>
-       <x>440</x>
+       <x>410</x>
        <y>50</y>
-       <width>141</width>
+       <width>171</width>
        <height>33</height>
       </rect>
      </property>
@@ -499,6 +499,25 @@ padding: 6px;</string>
      </property>
      <property name="text">
       <string>Добавить новую запись</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="filterButton">
+     <property name="geometry">
+      <rect>
+       <x>160</x>
+       <y>10</y>
+       <width>111</width>
+       <height>33</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border-radius: 10px;
+color: rgb(0, 0, 0);
+background-color: rgb(255, 255, 255);
+padding: 6px;</string>
+     </property>
+     <property name="text">
+      <string>Фильтрация</string>
      </property>
     </widget>
    </widget>
@@ -523,8 +542,8 @@ padding: 6px;</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1022</width>
-     <height>20</height>
+     <width>1120</width>
+     <height>29</height>
     </rect>
    </property>
   </widget>
