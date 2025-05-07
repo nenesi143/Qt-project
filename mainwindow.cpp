@@ -850,3 +850,80 @@ void MainWindow::on_Diagram3_clicked()
         ui->tableWidget->setVisible(false);
 }
 
+void MainWindow::on_filterButton_clicked()
+{
+    if (ui->tableWidget->isHidden()) {
+        ui->tableWidget->setVisible(true);
+
+        QLayoutItem* item;
+        while ((item = ui->verticalLayout_2->takeAt(1)) != nullptr) {
+            delete item->widget();
+            delete item;
+        }
+        return;
+    }
+
+    if (recordcount == 0) {
+        QMessageBox::warning(this, "Ошибка", "Нет записей для фильтрации!");
+        return;
+    }
+
+    QString studentName = QInputDialog::getText(this, "Фильтрация по студенту",
+                                              "Введите ФИО студента:",
+                                              QLineEdit::Normal);
+
+    if (studentName.isEmpty()) {
+        QMessageBox::warning(this, "Ошибка", "Не введено имя студента!");
+        return;
+    }
+
+    QTableWidget *filteredTable = new QTableWidget(this);
+    filteredTable->setColumnCount(ui->tableWidget->columnCount());
+    filteredTable->setHorizontalHeaderLabels({"Студент", "Группа", "Курс", "Лабораторная", "Дата сдачи", "Оценка", "Дата выдачи"});
+
+    int filteredRow = 0;
+    bool found = false;
+
+    for (int row = 0; row < ui->tableWidget->rowCount(); ++row) {
+        QTableWidgetItem *item = ui->tableWidget->item(row, 0);
+
+        if (item && item->text().contains(studentName, Qt::CaseInsensitive)) {
+            found = true;
+            filteredTable->insertRow(filteredRow);
+
+            for (int col = 0; col < ui->tableWidget->columnCount(); ++col) {
+                QTableWidgetItem *originalItem = ui->tableWidget->item(row, col);
+                if (originalItem) {
+                    QTableWidgetItem *newItem = originalItem->clone();
+                    filteredTable->setItem(filteredRow, col, newItem);
+                }
+            }
+            filteredRow++;
+        }
+    }
+
+    if (!found) {
+        QMessageBox::information(this, "Результат",
+                                QString("Не найдено записей для студента: %1").arg(studentName));
+        delete filteredTable;
+        return;
+    }
+
+    filteredTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+    filteredTable->setEditTriggers(QAbstractItemView::NoEditTriggers);
+    filteredTable->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+
+    QLayoutItem* item;
+    while ((item = ui->verticalLayout_2->takeAt(1)) != nullptr) {
+        delete item->widget();
+        delete item;
+    }
+
+    ui->verticalLayout_2->insertWidget(1, filteredTable);
+    ui->tableWidget->setVisible(false);
+    filteredTable->setWindowTitle(QString("Записи студента: %1").arg(studentName));
+
+    if (chartView && chartView->isVisible()) {
+        chartView->setVisible(false);
+    }
+}
