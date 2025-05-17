@@ -510,6 +510,13 @@ padding: 6px;</string>
        <height>33</height>
       </rect>
      </property>
+     <property name="font">
+      <font>
+       <family>Bahnschrift SemiBold SemiConden</family>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
      <property name="styleSheet">
       <string notr="true">border-radius: 10px;
 color: rgb(0, 0, 0);
@@ -543,7 +550,7 @@ padding: 6px;</string>
      <x>0</x>
      <y>0</y>
      <width>1120</width>
-     <height>29</height>
+     <height>20</height>
     </rect>
    </property>
   </widget>
