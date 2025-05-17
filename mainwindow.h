@@ -49,6 +49,7 @@ private slots:
     void on_Diagram1_clicked();
     void on_Diagram2_clicked();
     void on_graphic_clicked();
+    void on_filterButton_clicked();
 
 private:
     Ui::MainWindow *ui;
